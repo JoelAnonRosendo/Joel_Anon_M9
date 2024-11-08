@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MagicShop</h1>
+
+    <p>Has visitado esta página <strong><?php echo $visitas; ?></strong> veces.</p>
+
+    <?php if ($descuento > 0): ?>
+    	<?php if ($descuento = 20): ?>
+		<p>Oferta exclusiva! Utilitza el codi BOTIGA20 per obtenir un <strong><?php echo $descuento; ?>%</strong> de descompte en les teves primeres compres a la botiga.</p>
+	<?php elseif ($descuento = 50): ?>
+		<p>Oferta exclusiva! Utilitza el codi BOTIGA50 per obtenir un <strong><?php echo $descuento; ?>%</strong> de descompte en les teves primeres compres a la botiga.</p>
+    <?php endif; ?>
+
+    <form method="POST" action="descuento.php">
+        <label for="codigo_descuento">Código de descuento:</label>
+        <input type="text" id="codigo_descuento" name="codigo_descuento" required>
+        <button type="submit" name="aplicar_descuento">Aplicar Descuento</button>
+    </form>
+
+    <form method="POST" action="contador_vistas.php">
+        <button type="submit" name="comprar">Realizar Compra</button>
+    </form>
+</body>
+</html>
