@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.borde{
+    border: 0.2vw solid black; width: 25vw;
+}
+
+.separador{
+    padding: 3vw;
+}
+
+img {
+    width: 10vw;
+}
+
+.boton{
+    border-radius: 25%;
+}
+
+#insta{
+    width: 5vw;
+}
+
+#face{
+    width: 5vw;
+}
+
+
+
+#tiktok{
+    width: 5vw;
+}
