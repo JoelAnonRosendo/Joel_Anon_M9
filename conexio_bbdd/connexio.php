@@ -7,4 +7,5 @@
     else{
         echo"OK";
     }
+    $query = mysqli_query($conn, "Insert into users VALUES('54174087T','Johan','Ponze')");
 ?>
