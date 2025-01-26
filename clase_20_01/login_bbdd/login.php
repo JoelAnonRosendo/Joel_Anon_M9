@@ -1,5 +1,7 @@
 <?php
 session_start();
+$conn = mysqli_connect("localhost", "janon", "joel", "test");
+
 
 $_SESSION['user_login']='intento';
 $user=$_POST['user_log'];
@@ -7,31 +9,20 @@ $password=$_POST['pswd'];
 
 // consulta base de datos
 
-
-
-
-
-
-
-if ($user != $password) {
-#	echo "Login incorrecte!";
-	
-	session_destroy();
-		
-	header("Location: ./index.html");
+if(!$conn){
+    echo "No se ha podido conectar a la BBDD";
 }
 else {
+    $sql = "SELECT * FROM login WHERE id_usuario = $user AND contraseña = $password";
 
-
-	echo "<h1>Bienvenido:  $user</h1> <br>";
-	$_SESSION['user_login']=$user;
-	$_SESSION['log']=true;
-
-
-	header("Location: ./login_correct.php");
+    $query = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($query);
+	if($rows > 0){
+		$_SESSION['user_login']=$user;
+		header('Location: ./login_correct.php');
+	}
+	else {
+		header('Location: ./index.html');
+	};
 }
-
-
-
-
 ?>
