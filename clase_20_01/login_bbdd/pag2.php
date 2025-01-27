@@ -1,6 +1,7 @@
-<?php session_start();
+<?php 
+session_start();
     if(! isset($_SESSION['log'])){
-        header("Location: index.html");
+        // header("Location: index.html");
     }
 ?>
 

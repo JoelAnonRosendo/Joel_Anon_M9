@@ -13,16 +13,18 @@ if(!$conn){
     echo "No se ha podido conectar a la BBDD";
 }
 else {
-    $sql = "SELECT * FROM login WHERE id_usuario = $user AND contraseña = $password";
-
+    $sql = "SELECT * FROM acceso WHERE id_usuario = '$user' AND contraseña = '$password'";
+	echo $sql;
     $query = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($query);
+	echo $rows;
 	if($rows > 0){
 		$_SESSION['user_login']=$user;
-		header('Location: ./login_correct.php');
+		header('Location: ./pag2.php');
 	}
 	else {
 		header('Location: ./index.html');
+		echo "Usuario o contraseña incorrectos";
 	};
 }
 ?>
