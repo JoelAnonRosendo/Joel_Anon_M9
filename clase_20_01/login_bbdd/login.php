@@ -20,6 +20,7 @@ else {
 	echo $rows;
 	if($rows > 0){
 		$_SESSION['user_login']=$user;
+		$_SESSION['log']=true;
 		header('Location: ./pag2.php');
 	}
 	else {
