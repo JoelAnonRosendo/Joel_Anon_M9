@@ -1,0 +1,5 @@
+Mostra el títol i l'any de totes les películes que tinguin
+una puntuació major a la introduïda per l'usuari.
+
+
+Pista: operador > o < 
